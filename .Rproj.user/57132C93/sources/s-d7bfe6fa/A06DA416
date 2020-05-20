@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589980885599.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3687468779",
+    "id" : "A06DA416",
+    "lastKnownWriteTime" : 1589984364,
+    "last_content_update" : 1589984215409,
+    "path" : "~/Task/MultiomicsSubtyping/code/clin/ClinClean/R/ClinFunction.R",
+    "project_path" : "R/ClinFunction.R",
+    "properties" : {
+        "cursorPosition" : "404,70",
+        "scrollLine" : "393"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

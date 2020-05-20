@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589977753913.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3920630657",
+    "id" : "CED7ACF0",
+    "lastKnownWriteTime" : 1589977894,
+    "last_content_update" : 1589977894,
+    "path" : "~/Task/MultiomicsSubtyping/code/ICGC-RNA-seq/clin/ClinClean/R/hello.R",
+    "project_path" : "R/hello.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

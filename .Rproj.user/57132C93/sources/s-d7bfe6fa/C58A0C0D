@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589980333830.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4116331488",
+    "id" : "C58A0C0D",
+    "lastKnownWriteTime" : 1589977894,
+    "last_content_update" : 1589977894,
+    "path" : "~/Task/MultiomicsSubtyping/code/clin/ClinClean/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}
