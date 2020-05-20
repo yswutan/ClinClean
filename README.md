@@ -1,6 +1,6 @@
 # ClinClean
 
-## install
+## Install
 ```
 devtools::install_github("yswutan/ClinClean")
 ```
