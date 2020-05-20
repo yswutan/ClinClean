@@ -1,6 +1,3 @@
-require(survival)
-require(gfplot)
-
 #' SheetConvert
 #'
 #' @param sheet0 a data.frame of clinical follow up
