@@ -1,5 +1,11 @@
 # ClinClean
 
+## install
+```
+devtools::install_github("yswutan/ClinClean")
+```
+
+
 ## Step 1: read clinical raw data
 sheet0: follow up; 
 sheet1: patient information
