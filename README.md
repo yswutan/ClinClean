@@ -10,6 +10,7 @@ devtools::install_github("yswutan/ClinClean")
 sheet0: follow up; 
 sheet1: patient information
 ```
+library(ClinClean)
 sheet0 <- read.table("20191121-1611_follow_data_sheet0.txt", header=T, sep="\t", quote="", fileEncoding="UTF-8", fill=T, stringsAsFactors=FALSE)
 sheet1 <- read.table("20191121-1611_follow_data_sheet1_part.txt", header=T, sep="\t", quote="", fileEncoding="UTF-8", stringsAsFactors=FALSE)
 ```
