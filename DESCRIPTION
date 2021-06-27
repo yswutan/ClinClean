@@ -1,0 +1,13 @@
+Package: ClinClean
+Type: Package
+Title: convert clinical follow up to overall survival and disease-free survival
+Version: 0.1.0
+Author: person(given = "Tan", family = "Wu", email = "wt.wutan@hotmail.com", role = c("aut", "cre"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: This package could convert clinical follow up to overall survival and disease-free survival
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    tcltk
+RoxygenNote: 7.1.1
