@@ -219,6 +219,7 @@ OSCalculate <- function(sheet_individual, type){
     status <- 0
     OS <- as.numeric(difftime(max(as.POSIXct(sorttimes)), min(as.POSIXct(sorttimes[grep('入院日期', names(sorttimes))]), as.POSIXct(sorttimes[grep('手术日期',  names(sorttimes))])), units="days"))
   }
+  OS <- ceiling(OS)
   OSStatus <- data.frame(OS=OS, OSStatus=status)
   return(OSStatus)
 }
@@ -306,6 +307,7 @@ DFSCalculate <- function(sheet_individual, relapseDate, sorttimes, type){
       DFS <- min(DFS, as.numeric(difftime(as.POSIXct(sorttimes[grep('死亡时间', names(sorttimes), fixed=T)]), as.POSIXct(sorttimes[grep('手术日期', names(sorttimes), fixed=T)]), units="days")))
     }
   }
+  DFS <- ceiling(DFS)
   DFSTable <- data.frame(DFS=DFS, DFSStatus=DFSStatus)
   return(DFSTable)
 }
