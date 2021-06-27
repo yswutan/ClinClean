@@ -200,8 +200,8 @@ OSCalculate <- function(sheet_individual, type){
       } else {
         lasttwo <- dim(sheet_individual)[1]-1
       }
-      least_OS <- as.numeric(difftime(as.POSIXct(sheet_individual$'随访时间'[lasttwo]), min(as.POSIXct(sorttimes[grep('入院日期', names(sorttimes))]), as.POSIXct(sorttimes[grep('手术日期',  names(sorttimes))])), units="days"))
-      most_OS <- as.numeric(difftime(max(as.POSIXct(sheet_individual$'随访时间')), min(as.POSIXct(sorttimes[grep('入院日期', names(sorttimes))]), as.POSIXct(sorttimes[grep('手术日期',  names(sorttimes))])), units="days"))
+      least_OS <- as.numeric(difftime(do.call("c", lapply(sheet_individual$'随访时间'[lasttwo], as.POSIXct)), min(as.POSIXct(sorttimes[grep('入院日期', names(sorttimes))]), as.POSIXct(sorttimes[grep('手术日期',  names(sorttimes))])), units="days"))
+      most_OS <- as.numeric(difftime(max(do.call("c", lapply(sheet_individual$'随访时间', as.POSIXct))), min(as.POSIXct(sorttimes[grep('入院日期', names(sorttimes))]), as.POSIXct(sorttimes[grep('手术日期',  names(sorttimes))])), units="days"))
       if(type == "max"){
         OS <- most_OS
       }
@@ -217,9 +217,8 @@ OSCalculate <- function(sheet_individual, type){
     }
   } else {
     status <- 0
-    OS <- as.numeric(difftime(max(as.POSIXct(sorttimes)), min(as.POSIXct(sorttimes[grep('入院日期', names(sorttimes))]), as.POSIXct(sorttimes[grep('手术日期',  names(sorttimes))])), units="days"))
+    OS <- as.numeric(difftime(max(do.call("c", lapply(sorttimes, as.POSIXct))), min(as.POSIXct(sorttimes[grep('入院日期', names(sorttimes))]), as.POSIXct(sorttimes[grep('手术日期',  names(sorttimes))])), units="days"))
   }
-  OS <- ceiling(OS)
   OSStatus <- data.frame(OS=OS, OSStatus=status)
   return(OSStatus)
 }
@@ -264,7 +263,7 @@ RelapseDate <- function(sheet_individual, type, TimeInterval){
     prerelapseRecordDate <- sorttimes[grep('复发前随访病历时间', names(sorttimes), fixed=T)]
     relapseDate <- sorttimes[grep('复发随访时间', names(sorttimes), fixed=T)]
     if(length(relapseDate) != 0){
-      rangedate <- as.numeric(difftime(as.POSIXct(relapseDate), as.POSIXct(prerelapseRecordDate), units="days"))
+      rangedate <- as.numeric(difftime(do.call("c", lapply(relapseDate, as.POSIXct)), do.call("c", lapply(prerelapseRecordDate, as.POSIXct)), units="days"))
       if(rangedate > TimeInterval*30){
         relapseDate <- sorttimes[grep('不存在', names(sorttimes), fixed=T)]
       } else {
@@ -307,7 +306,6 @@ DFSCalculate <- function(sheet_individual, relapseDate, sorttimes, type){
       DFS <- min(DFS, as.numeric(difftime(as.POSIXct(sorttimes[grep('死亡时间', names(sorttimes), fixed=T)]), as.POSIXct(sorttimes[grep('手术日期', names(sorttimes), fixed=T)]), units="days")))
     }
   }
-  DFS <- ceiling(DFS)
   DFSTable <- data.frame(DFS=DFS, DFSStatus=DFSStatus)
   return(DFSTable)
 }
